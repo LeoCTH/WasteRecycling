@@ -1,0 +1,8 @@
+{
+    "item.wasterecycling.battery": "电池",
+    "item.wasterecycling.apple_core": "苹果核",
+    "item.wasterecycling.cotton_ball": "脏棉球",
+    "item.wasterecycling.soda_can": "空饮料罐",
+    "itemGroup.wasterecycling.waste": "垃圾回收",
+    "text.wasterecycling.battery_ded": "呀没电了 惊了 赶紧扔到废电池回收桶里罢（"
+}

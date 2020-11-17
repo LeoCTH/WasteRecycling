@@ -1,0 +1,8 @@
+{
+    "item.wasterecycling.battery": "Battery",
+    "item.wasterecycling.apple_core": "Apple Core",
+    "item.wasterecycling.cotton_ball": "Dirty Cotton Ball",
+    "item.wasterecycling.soda_can": "Empty Soda Can",
+    "itemGroup.wasterecycling.waste": "Waste Recycling",
+    "text.wasterecycling.battery_ded": "Oops that battery seems dead. Go recycle that at the nearest recycling bin!"
+}
