@@ -1,12 +1,9 @@
-package com.leocth.wasterecycling;
+package com.leocth.wasterecycling.item;
 
-import com.leocth.wasterecycling.item.BatteryItem;
+import com.leocth.wasterecycling.WasteRecycling;
+import com.leocth.wasterecycling.block.WRBlocks;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.item.FoodComponents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
+import net.minecraft.item.*;
 import net.minecraft.util.registry.Registry;
 
 // 存放所有物品的类
@@ -40,25 +37,20 @@ public class WRItems {
         registerItem(APPLE_CORE, "apple_core");
         registerItem(BATTERY, "battery");
         registerItem(SODA_CAN, "soda_can");
+        registerItem(new BlockItem(WRBlocks.GARBAGE_BLOCK, new Item.Settings()), "garbage_block");
     }
 
     // 私有方法
     // 从别的类中调用WRItems.registerItem(...) <---- 报错！
     private static void registerItem(Item item, String id) {
         // 调用静态方法 Registry.register（注册）
-        Registry.register(Registry.ITEM, id(id), item);
-    }
-
-    // 帮手方法
-    // 此处作为创建一个新Identifier（如minecraft:potato）的便捷方式
-    public static Identifier id(String path) {
-        return new Identifier(WasteRecycling.MODID, path);
+        Registry.register(Registry.ITEM, WasteRecycling.id(id), item);
     }
 
     static {
-        GROUP = FabricItemGroupBuilder                 // Fabric的贴心扩展
+        GROUP = FabricItemGroupBuilder                        // Fabric的贴心扩展
                     .build(
-                            id("waste"),                // wasterecycling:waste
+                            WasteRecycling.id("waste"), // wasterecycling:waste
                             () -> new ItemStack(APPLE_CORE)); // 将图标物品设成苹果核
 
         COTTON_BALL = new Item(new Item.Settings().group(GROUP));

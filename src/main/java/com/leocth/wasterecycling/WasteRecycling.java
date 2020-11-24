@@ -1,6 +1,9 @@
 package com.leocth.wasterecycling;
 
+import com.leocth.wasterecycling.block.WRBlocks;
+import com.leocth.wasterecycling.item.WRItems;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 
 
 public class WasteRecycling implements ModInitializer {
@@ -16,5 +19,12 @@ public class WasteRecycling implements ModInitializer {
     @Override
     public void onInitialize() {
         WRItems.register(); // 注册所有物品
+        WRBlocks.register();
+    }
+
+    // 帮手方法
+    // 此处作为创建一个新Identifier（如minecraft:potato）的便捷方式
+    public static Identifier id(String path) {
+        return new Identifier(WasteRecycling.MODID, path);
     }
 }
