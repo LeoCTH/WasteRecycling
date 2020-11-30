@@ -38,6 +38,7 @@ public class WRItems {
         registerItem(BATTERY, "battery");
         registerItem(SODA_CAN, "soda_can");
         registerItem(new BlockItem(WRBlocks.GARBAGE_BLOCK, new Item.Settings()), "garbage_block");
+        registerItem(new BlockItem(WRBlocks.GARBAGE_BIN, new Item.Settings()), "garbage_bin");
     }
 
     // 私有方法
