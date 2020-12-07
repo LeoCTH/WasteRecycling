@@ -49,12 +49,19 @@ public class GarbageBinBlockEntity extends BlockEntity {
 
     // 移除物品
     public ItemStack removeItem() {
+        if (currentItems >= 0) {
+            currentItems--;
+            ItemStack stack = inventory.get(currentItems);
+            inventory.set(currentItems, ItemStack.EMPTY);
+            return stack;
+        }
+        else {
+            return ItemStack.EMPTY;
+        }
         //TODO! 练习
         //* 判断目前存放的物品数量（currentItems）是否*不小于*最小数量（0）
         //* * 如果不是，返回空物品堆（ItemStack.EMPTY）
-        //* * 如果是，返回物品栏中位于currentItems的物品堆，并去除（remove）该物品堆，
-        //    最后将物品数量减1
-        throw new NotImplementedException(); // 在写完自己的代码之后把这一行去掉
+        //* * 如果是，将物品数量减1 返回物品栏中位于currentItems的物品堆，并去除（remove）该物品堆
     }
 
     static {
